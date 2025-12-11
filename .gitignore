@@ -33,3 +33,6 @@ go.work.sum
 
 # Storage
 storage/*
+
+# Config
+config/*
