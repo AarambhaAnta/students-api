@@ -108,13 +108,13 @@ func DeleteById(storage storage.Storage) http.HandlerFunc {
 			return
 		}
 
-		result, err := storage.DeleteStudentById(intId)
+		student, err := storage.DeleteStudentById(intId)
 		if err != nil {
 			slog.Error("error deleting student", slog.String("id", id))
 			response.WriteJson(w, http.StatusInternalServerError, response.GeneralError(err))
 			return
 		}
 
-		response.WriteJson(w, http.StatusOK, result)
+		response.WriteJson(w, http.StatusOK, student)
 	}
 }
